@@ -1,313 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GYM CLASSES</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GYM CLASSES</title>
+<link rel="stylesheet" href="style.css">
+
 <style>
-    body {
-  
+body {
+  background-image: url("https://i.pinimg.com/1200x/89/e4/eb/89e4eb4e9075233d991b74e95a99c56d.jpg");
+  background-size: cover;
+  background-position: center;
+  color: aqua;
+}
 
-             background-image: url("https://i.pinimg.com/1200x/89/e4/eb/89e4eb4e9075233d991b74e95a99c56d.jpg");
-             background-size: cover;
-             background-position: center;
-             background-repeat: no-repeat;
-             color:aqua;
-             margin: 2px;
-    }
-    table {
-            border-collapse: collapse;
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.35);
-            overflow: hidden;
-            margin-top: 20px;
-            width: 100%;
-            height: 100%;
-            border:1px;
-            
-        }
+table {
+  border-collapse: collapse;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.35);
+  width: 100%;
+}
 
-        td {
-            padding: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+td, th {
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
 
-        caption {
-            font-size: 18px;
-            margin-bottom: 8px;
-            color: aqua;
-        }
-  .controls {
-  padding: 0 3rem 2rem;
+.controls {
   display: flex;
-  flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.filter-label {
-  font-size: 0.72rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(232,232,224,0.4);
-}
-
-.filter-btn {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(0,220,220,0.18);
-  color: rgba(232,232,224,0.65);
-  padding: 0.4rem 1rem;
-  border-radius: 2rem;
-  font-size: 0.78rem;
-  cursor: pointer;
-  transition: all 0.18s;
-  letter-spacing: 0.5px;
-}
-.filter-btn:hover {
-  border-color: rgba(0,220,220,0.5);
-  color: #e8e8e0;
-}
 .filter-btn.active {
-  background: rgba(0,220,220,0.15);
-  border-color: #00e5e5;
-  color: #00e5e5;
-}
-
-.select-wrap {
-  position: relative;
-}
-.select-wrap select {
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: #111111;
-  border: 1px solid rgba(0,220,220,0.18);
-  color: #e8e8e0;
-  padding: 0.4rem 2rem 0.4rem 1rem;
-  border-radius: 2rem;
-  font-size: 0.78rem;
-  cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-}
-
-.select-wrap select option {
-  background-color: #111111;
-  color: #e8e8e0;
-}
-.select-wrap::after {
-  content: '▾';
-  position: absolute;
-  right: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #00e5e5;
-  font-size: 0.7rem;
-  pointer-events: none;
-}
-
-.divider {
-  flex: 1;
-  min-width: 1px;
-  height: 1px;
-  background: rgba(0,220,220,0.1);
-}
-              /* Dropdown options background fix */
-#dayFilter option,
-#trainerFilter option {
-  background-color: #0a0a0a;
-  color: #e8e8e0;
-}
-
-#dayFilter,
-#trainerFilter {
-  background-color: #0a0a0a;
-  color: rgba(232, 232, 224, 0.65);
+  background: rgba(0,220,220,0.2);
 }
 </style>
 </head>
-<header>
-   
-    
-        <nav >
-            <ul class="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="classes.html">Classes</a></li>
-                <li><a href="membership.html">Membership</a></li>
-                <li><a href="trainers.html">Trainers</a></li>
-                <li><a href="contact.html">Constact</a></li>
-            </ul>
-        </nav>
-        <div>
-    
-    </header>
+
 <body>
-<h1 >ELITS GYM - Classes Schedule</h1>
-<p>Explore our available fitness classes. Choose the one that fits your goals and schedule.</p>
-<br>
+
+<h1>ELITS GYM - Classes Schedule</h1>
+
 <div class="controls">
-  <!-- Level Filter (buttons) -->
-  <span class="filter-label">Level</span>
-  <div class="filter-group" id="levelFilters">
-   <button class="filter-btn active" data-diff="All">All</button>
-<button class="filter-btn" data-diff="Beginner">Beginner</button>
-<button class="filter-btn" data-diff="Intermediate">Intermediate</button>
-<button class="filter-btn" data-diff="Advanced">Advanced</button>
+
+  
+  <div id="levelFilters">
+    <button class="filter-btn active" data-diff="All">All</button>
+    <button class="filter-btn" data-diff="Beginner">Beginner</button>
+    <button class="filter-btn" data-diff="Intermediate">Intermediate</button>
+    <button class="filter-btn" data-diff="Advanced">Advanced</button>
   </div>
 
-  <div class="divider"></div>
+  
+  <select id="daySelect">
+    <option value="">All days</option>
+    <option>Monday</option>
+    <option>Tuesday</option>
+    <option>Wednesday</option>
+    <option>Thursday</option>
+    <option>Friday</option>
+    <option>Saturday</option>
+    <option>Sunday</option>
+  </select>
 
-  <!-- Day Filter (dropdown) -->
-  <span class="filter-label">Day</span>
-  <div class="select-wrap">
-    <select id="daySelect">
-      <option value="">All days</option>
-      <option>Monday</option>
-      <option>Tuesday</option>
-      <option>Wednesday</option>
-      <option>Thursday</option>
-      <option>Friday</option>
-      <option>Saturday</option>
-      <option>Sunday</option>
-    </select>
-  </div>
+  
+  <select id="trainerSelect">
+    <option value="">All trainers</option>
+    <option>Lina Boudia</option>
+    <option>Amir Hassan</option>
+    <option>Zakaria Benmounah</option>
+    <option>Sara Ali</option>
+    <option>Samir Reda</option>
+  </select>
 
-  <!-- Trainer Filter (dropdown) -->
-  <div class="select-wrap">
-    <select id="trainerSelect">
-      <option value="">All trainers</option>
-      <option>Lina Boudia</option>
-      <option>Amir Hassan</option>
-      <option>Zakaria Benmounah</option>
-      <option>Sara Ali</option>
-      <option>Samir Reda</option>
-    </select>
-  </div>
-</div><br>
-<table  >
-<caption>Available Gym Classes</caption>
+</div>
+
+<br>
+
+<table>
   <thead>
-    <thead>
-  <tr>
-    <th class="sortable" data-col="name">Class Name <span id="sort-name">⬍</span></th>
-    <th>Instructor</th>
-    <th>Day</th>
-    <th class="sortable" data-col="time">Time <span id="sort-time">⬍</span></th>
-    <th class="sortable" data-col="duration">Duration <span id="sort-duration">⬍</span></th>
-    <th>Difficulty Level</th>
-  </tr>
-</thead>
+    <tr>
+      <th class="sortable" data-col="name">Class Name <span id="sort-name">⬍</span></th>
+      <th>Trainer</th>
+      <th>Day</th>
+      <th class="sortable" data-col="time">Time <span id="sort-time">⬍</span></th>
+      <th class="sortable" data-col="duration">Duration <span id="sort-duration">⬍</span></th>
+      <th>Difficulty</th>
+    </tr>
   </thead>
 
-  <tbody id="classTableBody">
-
-    
-    <tr>
-      <td><a href="yoga.html">Yoga Flow</a></td>
-      <td>Lina Boudia</td>
-      <td>Monday</td>
-      <td>13:00 PM</td>
-      <td>60 min</td>
-      <td>Beginner</td>
-    </tr>
-
-    
-    <tr>
-      <td><a href="yoga.html">Yoga Flow</a></td>
-      <td>Lina Boudia</td>
-      <td>Thursday</td>
-      <td>09:00 AM</td>
-      <td>60 min</td>
-      <td>Beginner</td>
-    </tr>
-
-    
-    <tr>
-      <td><a href="boxing.html">Boxing Training</a></td>
-      <td>Amir Hassan</td>
-      <td>Tuesday</td>
-      <td>08:00 AM</td>
-      <td>90 min</td>
-      <td>Intermediate</td>
-    </tr>
-
-    
-    <tr>
-      <td><a href="boxing.html">Boxing Training</a></td>
-      <td>Amir Hassan</td>
-      <td>Friday</td>
-      <td>18:00 PM</td>
-      <td>90 min</td>
-      <td>Intermediate</td>
-    </tr>
-
-    
-    <tr>
-      <td><a href="hiit.html">HIIT Workout</a></td>
-      <td>Zakaria Benmounah</td>
-      <td>Wednesday</td>
-      <td>19:00 PM</td>
-      <td>45 min</td>
-      <td>Advanced</td>
-    </tr>
-
-    
-    <tr>
-      <td><a href="hiit.html">HIIT Workout</a></td>
-      <td>Zakaria Benmounah</td>
-      <td>Saturday</td>
-      <td>10:00 AM</td>
-      <td>45 min</td>
-      <td>Advanced</td>
-    </tr>
-
-    
-    <tr>
-      <td><a href="pilates.html">Pilates</a></td>
-      <td>Sara Ali</td>
-      <td>Thursday</td>
-      <td>14:00 PM</td>
-      <td>60 min</td>
-      <td>Beginner</td>
-    </tr>
-
-    
-    <tr>
-      <td><a href="pilates.html">Pilates</a></td>
-      <td>Sara Ali</td>
-      <td>Monday</td>
-      <td>17:00 PM</td>
-      <td>60 min</td>
-      <td>Beginner</td>
-    </tr>
-
-    
-    <tr>
-      <td><a href="crossfit.html">CrossFit</a></td>
-      <td>Samir Reda</td>
-      <td>Sunday</td>
-      <td>17:00 PM</td>
-      <td>75 min</td>
-      <td>Advanced</td>
-    </tr>
-
-    
-    <tr>
-      <td><a href="crossfit.html">CrossFit</a></td>
-      <td>Samir Reda</td>
-      <td>Wednesday</td>
-      <td>20:00 PM</td>
-      <td>75 min</td>
-      <td>Advanced</td>
-    </tr>
-
-  </tbody>
-</table>
+  
+  
+    <tbody id="classTableBody">
+       <tr> 
+        <td><a href="yoga.html">Yoga Flow</a></td>
+        <td>Lina Boudia</td> 
+        <td>Monday</td> 
+        <td>13:00 PM</td> 
+        <td>60 min</td> 
+        <td>Beginner</td> 
+      </tr> 
+      <tr> 
+        <td><a href="yoga.html">Yoga Flow</a></td> 
+        <td>Lina Boudia</td> 
+        <td>Thursday</td> 
+        <td>09:00 AM</td> 
+        <td>60 min</td> 
+        <td>Beginner</td> 
+      </tr> 
+      <tr> 
+        <td><a href="boxing.html">Boxing Training</a></td> 
+        <td>Amir Hassan</td> <td>Tuesday</td> 
+        <td>08:00 AM</td> <td>90 min</td> 
+        <td>Intermediate</td> 
+      </tr> 
+      <tr> 
+        <td><a href="boxing.html">Boxing Training</a></td> 
+        <td>Amir Hassan</td> 
+        <td>Friday</td> 
+        <td>18:00 PM</td> 
+        <td>90 min</td> 
+        <td>Intermediate</td> 
+      </tr> 
+      <tr> 
+        <td><a href="hiit.html">HIIT Workout</a></td> 
+        <td>Zakaria Benmounah</td> 
+        <td>Wednesday</td> 
+        <td>19:00 PM</td> 
+        <td>45 min</td> 
+        <td>Advanced</td> 
+      </tr> 
+      <tr> 
+        <td><a href="hiit.html">HIIT Workout</a></td> 
+        <td>Zakaria Benmounah</td> <td>Saturday</td> 
+        <td>10:00 AM</td> <td>45 min</td> 
+        <td>Advanced</td> 
+      </tr> 
+      <tr> 
+        <td><a href="pilates.html">Pilates</a></td> 
+        <td>Sara Ali</td> 
+        <td>Thursday</td> 
+        <td>14:00 PM</td> 
+        <td>60 min</td> 
+        <td>Beginner</td> 
+      </tr> 
+      <tr> 
+        <td><a href="pilates.html">Pilates</a></td> 
+        <td>Sara Ali</td> 
+        <td>Monday</td> 
+        <td>17:00 PM</td> 
+        <td>60 min</td> 
+        <td>Beginner</td> 
+      </tr> 
+      <tr> 
+        <td><a href="crossfit.html">CrossFit</a></td> 
+        <td>Samir Reda</td> <td>Sunday</td> 
+        <td>17:00 PM</td> <td>75 min</td> 
+        <td>Advanced</td> 
+      </tr> 
+      <tr> 
+        <td><a href="crossfit.html">CrossFit</a></td> 
+        <td>Samir Reda</td> 
+        <td>Wednesday</td> 
+        <td>20:00 PM</td> 
+        <td>75 min</td> 
+        <td>Advanced</td> 
+      </tr> 
+    </tbody>  
+  </table>
 </main>
-<br><br><br>
-<hr>
-<footer>
-<p>© 2026 ELITS GYM - Constantine, Ali Mendjeli</p>
-</footer>
+<br><br><br> <hr> 
+<footer> <p>© 2026 ELITS GYM - Constantine, Ali Mendjeli</p> </footer>
 <script src="script.js"></script>
 </body>
 </html>
