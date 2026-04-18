@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - Members</title>
+</head>
+<link rel="stylesheet" href="admin.css">
+
+<body>
+
+<h1>Members Management</h1>
+
+<input type="text" id="search" placeholder="Search members...">
+
+<form id="memberForm">
+  <input type="text" placeholder="Name" id="name" required>
+  <input type="email" placeholder="Email" id="email" required>
+  <input type="text" placeholder="Phone" id="phone">
+  <select id="plan">
+  <option value="Bronze">Bronze</option>
+  <option value="Silver">Silver</option>
+  <option value="Gold">Gold</option>
+</select>
+  <label>join date</label>
+  <input type="date" placeholder="join date" id="date">
+  <button type="submit">Add Member</button>
+</form>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Plan</th>
+      <th>Join date</th>
+      <th>Actions</th>
+      
+    </tr>
+  </thead>
+  <tbody id="membersTable"></tbody>
+</table>
+  <script src="members.js"></script>
+</body>
+</html>

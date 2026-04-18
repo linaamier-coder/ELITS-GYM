@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - Classes</title>
+</head>
+<link rel="stylesheet" href="admin.css">
+<body>
+
+<h1>Classes Management</h1>
+
+<form id="classForm">
+  <input type="text" placeholder="Class Name" id="className">
+  <input type="text" placeholder="Trainer" id="trainer">
+  <input type="text" placeholder="Day" id="day">
+  <label>Time:</label>
+  <input type="time" id="time" required>
+  <input type="number" placeholder="Duration" id="duration" min="15" max="180" step="5" required>
+  <label>Difficulty:</label>
+  <select id="difficulty" required>
+    <option value="">Choose level</option>
+    <option value="Beginner">Beginner</option>
+    <option value="Intermediate">Intermediate</option>
+    <option value="Advanced">Advanced</option>
+  </select>
+  <label>Capacity:</label>
+  <input type="number" placeholder="Capacity" id="capacity" min="1" max="50" required>
+  <button type="submit">Add Class</button>
+</form>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Trainer</th>
+      <th>Day</th>
+      <th>time</th>
+      <th>duration</th>
+      <th>difficulty</th>
+      <th>capacity</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="classesTable"></tbody>
+</table>
+<script src="admin-classes.js"></script>
+</body>
+</html>

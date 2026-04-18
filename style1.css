@@ -1,0 +1,129 @@
+body{
+    background-color: aliceblue;
+    background-size: cover;
+    font-family: 'Oswald',sans-serif;
+}
+.header h1,p{
+    color: aqua;
+    text-align: center;
+}
+table caption{
+    color: aqua;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+tr:nth-child(even){
+    background:#f2f2f2;
+    }
+    tr:hover{
+    background:#e6ffff;
+}
+table{
+    width: 90%;
+    margin: 5%;
+    border-collapse: collapse ;
+    background-color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: -5px;
+}
+th{
+    text-align: left;
+    background-color: #00ffff;
+    color:white;
+    padding: 15px;
+}
+tr{
+    transition: 0.3s;
+}
+thead{
+    transition: 0.5s;
+}
+thead:hover{
+    transform: scale(1.02);
+
+}
+td{
+    color: black;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+    tr:nth-child(even){
+    background:#f2f2f2;
+    }
+    tr:hover{
+    background:#e6ffff;
+}
+button{
+    padding: 7px 14px;
+    border: none;
+    cursor:pointer;
+    font-weight:bold;
+    border-radius: 8px;
+    margin: 3px;
+    transition: 0.3s;
+    
+}
+.edit-btn{
+    background-color: #28a745;
+    color: white;
+}
+.edit-btn:hover {
+    background: #218838;
+    transform: scale(1.1);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.delete-btn{
+    background: #dc3545;
+    color: white;
+}
+.delete-btn:hover{
+    background-color: #a81a29;
+    transform: scale(1.1);
+    box-sizing: 0 5px 10px rgba(0,0,0,0.2);
+}
+h2{
+    color:aqua;
+    text-align: center;
+    margin-top: -50px;
+}
+form{
+    background: white;
+    border-radius: 12px;
+    width: 50%;
+    padding: 25px;
+    margin: 20px auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-top: -20px;
+}
+
+input{
+    width: 99%;
+    border-radius:12px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 8px 0px 15px;
+    transition: 0.3s;
+}
+input:focus {
+    border-color: #00ffff;
+    outline: none;
+    box-shadow:0 0 8px rgba(0,123,255,0.3);
+}
+.submit{
+    width: 100%;
+    background-color: #00ffff;
+    color:white;
+}
+.submit:hover{
+    background-color: #05c0c0;
+    transform: scale(1.03);
+}
+.oswald-anes {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
